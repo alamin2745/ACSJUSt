@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b32">
+  <meta name="description" content="ACS Student Chapter, Jashore University of Science and Technology — connecting chemistry, research, professional development and community impact.">
+  <title>ACS Student Chapter, JUST | Chemistry for a Better Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#071b32;--navy2:#0b2948;--blue:#155eef;--cyan:#56d6d0;
+      --ink:#14243a;--muted:#63738a;--paper:#f5f8fc;--white:#fff;
+      --line:#e3eaf2;--gold:#f2b84b;--radius:22px;
+      --shadow:0 18px 50px rgba(7,27,50,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,a{ -webkit-tap-highlight-color:transparent}
+    button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .container{width:min(1160px,calc(100% - 44px));margin:auto}
+    .topbar{background:#041326;color:#c9d8e9;font-size:13px}
+    .topbar .container{display:flex;justify-content:space-between;gap:15px;padding:9px 0;flex-wrap:wrap}
+    .topbar a{color:#fff}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(227,234,242,.9)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .brand-mark{height:48px;width:48px;border-radius:15px;background:var(--navy);display:grid;place-items:center;color:white;font:800 17px Manrope;letter-spacing:-1px;box-shadow:0 8px 20px #071b3226}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.25}
+    .brand-copy strong{font:800 14px Manrope;color:var(--navy)}
+    .brand-copy span{font-size:11px;color:var(--muted);margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:23px}
+    .nav-links a{font-size:13px;font-weight:700;color:#46566b;transition:.2s}
+    .nav-links a:hover{color:var(--blue)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:999px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;border:1px solid var(--blue);transition:.2s}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px #155eef35}
+    .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--navy);cursor:pointer}
+    .hero{position:relative;overflow:hidden;background:var(--navy);color:white;min-height:650px;display:flex;align-items:center}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,19,38,.97) 0%,rgba(4,19,38,.86) 48%,rgba(4,19,38,.38) 100%),url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=2000&q=85") center/cover}
+    .hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid #ffffff18;border-radius:50%;right:-130px;top:-170px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff05}
+    .hero-content{position:relative;z-index:2;padding:100px 0 110px;max-width:760px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#a9f1ec;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800}
+    .eyebrow:before{content:"";width:27px;height:2px;background:var(--cyan)}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.15}
+    h1{font-size:clamp(42px,6vw,76px);letter-spacing:-3px;margin:23px 0 22px;max-width:780px}
+    h1 span{color:var(--cyan)}
+    .hero p{color:#d0dbea;font-size:18px;max-width:600px;margin:0 0 32px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-light{background:#fff;color:var(--navy);border-color:#fff}
+    .btn-outline{background:transparent;border-color:#ffffff75;color:#fff}
+    .hero-note{margin-top:48px;display:flex;align-items:center;gap:13px;color:#c6d4e4;font-size:12px}
+    .hero-note i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 6px #56d6d022}
+    .section{padding:96px 0}
+    .section.white{background:#fff}
+    .section.dark{background:var(--navy);color:#fff}
+    .section-head{max-width:690px;margin-bottom:42px}
+    .kicker{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--blue);font-weight:800}
+    .dark .kicker{color:var(--cyan)}
+    h2{font-size:clamp(30px,4vw,46px);letter-spacing:-1.5px;margin:12px 0 16px}
+    .lead{font-size:17px;color:var(--muted);margin:0}
+    .dark .lead{color:#b9c8d9}
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .about-copy p{color:var(--muted)}
+    .about-visual{min-height:420px;border-radius:28px;position:relative;overflow:hidden;background:linear-gradient(145deg,#0b2948aa,#071b3277),url("https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=1100&q=85") center/cover;box-shadow:var(--shadow)}
+    .about-visual-card{position:absolute;left:24px;right:24px;bottom:24px;padding:23px;border:1px solid #ffffff45;border-radius:18px;background:#071b32d9;color:#fff;backdrop-filter:blur(12px)}
+    .about-visual-card strong{font:800 22px Manrope;display:block}
+    .about-visual-card span{font-size:13px;color:#c4d5e6}
+    .pill-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+    .pill{background:#eaf1ff;color:#214c9a;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:700}
+    .three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;transition:.25s}
+    .feature:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .feature-icon{height:48px;width:48px;border-radius:15px;background:#eaf1ff;color:var(--blue);display:grid;place-items:center;font-size:22px;margin-bottom:22px}
+    .feature h3{font-size:19px;margin:0 0 10px}
+    .feature p{font-size:14px;color:var(--muted);margin:0}
+    .program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .program{position:relative;overflow:hidden;min-height:240px;border-radius:22px;padding:30px;background:linear-gradient(135deg,#0b2948,#12416a);color:#fff}
+    .program:nth-child(2){background:linear-gradient(135deg,#0d3d52,#087e87)}
+    .program:nth-child(3){background:linear-gradient(135deg,#252a55,#3c4f9b)}
+    .program:nth-child(4){background:linear-gradient(135deg,#51304c,#91446c)}
+    .program:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #ffffff24;border-radius:50%;right:-50px;bottom:-80px;box-shadow:0 0 0 25px #ffffff09,0 0 0 50px #ffffff06}
+    .program small{color:#a9f1ec;text-transform:uppercase;letter-spacing:1.6px;font-size:10px;font-weight:800}
+    .program h3{font-size:24px;margin:16px 0 10px;max-width:320px}
+    .program p{font-size:14px;color:#d1deea;max-width:390px;margin:0}
+    .highlight{display:grid;grid-template-columns:110px 1fr;gap:25px;padding:26px 0;border-bottom:1px solid #ffffff20}
+    .highlight-date{color:var(--cyan);font:800 13px Manrope}
+    .highlight h3{font-size:20px;margin:0 0 8px}
+    .highlight p{margin:0;color:#b9c8d9;font-size:14px}
+    .initiative{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .initiative-panel{background:#fff;border-radius:24px;padding:32px;color:var(--ink);box-shadow:var(--shadow)}
+    .initiative-panel .tag{display:inline-block;background:#e7f8f7;color:#087e87;padding:7px 11px;border-radius:99px;font-size:11px;font-weight:800}
+    .initiative-panel h3{font-size:27px;margin:18px 0 12px}
+    .initiative-panel p{color:var(--muted);font-size:14px}
+    .checklist{list-style:none;padding:0;margin:20px 0 0}
+    .checklist li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;color:#42536a}
+    .checklist li:before{content:"✓";color:#079b91;font-weight:900;margin-right:10px}
+    .event-card{display:grid;grid-template-columns:160px 1fr;gap:25px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:20px;align-items:center}
+    .event-date{background:var(--navy);color:#fff;border-radius:16px;padding:20px;text-align:center}
+    .event-date strong{display:block;font:800 34px Manrope}
+    .event-date span{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#a9f1ec}
+    .event-info small{font-size:11px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:1.3px}
+    .event-info h3{font-size:21px;margin:8px 0}
+    .event-info p{color:var(--muted);font-size:14px;margin:0}
+    .community-box{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:linear-gradient(120deg,#0b2948,#155eef);color:#fff;border-radius:26px;padding:42px}
+    .community-box h2{font-size:34px;margin:0 0 10px}
+    .community-box p{color:#d6e3f3;margin:0;max-width:650px}
+    .social-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .social-copy{padding:20px 0}
+    .social-copy p{color:var(--muted)}
+    .fb-frame{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow);overflow:hidden}
+    .fb-frame iframe{display:block;width:100%;max-width:100%;border:0}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+    .contact-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+    .contact-card h3{margin:0 0 14px;font-size:20px}
+    .contact-card p{margin:8px 0;color:var(--muted);font-size:14px}
+    .contact-card a{color:var(--blue);font-weight:700}
+    footer{background:#041326;color:#c1cfde;padding:50px 0 25px}
+    .footer-main{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:32px}
+    .footer-brand{max-width:420px}
+    .footer-brand strong{font:800 18px Manrope;color:#fff}
+    .footer-brand p{font-size:13px;color:#9fb0c3}
+    .footer-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:13px}
+    .footer-links a:hover{color:var(--cyan)}
+    .copyright{border-top:1px solid #ffffff1c;padding-top:20px;font-size:12px;color:#91a4b8;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .backtop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:20}
+    .backtop.show{opacity:1;pointer-events:auto}
+    @media(max-width:900px){
+      .nav-links{display:none;position:absolute;left:0;right:0;top:82px;background:#fff;padding:20px 24px 25px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:17px}
+      .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+      .about-grid,.initiative{grid-template-columns:1fr;gap:30px}
+      .three-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:620px){
+      .container{width:min(100% - 32px,1160px)}
+      .topbar .container{font-size:11px}
+      .brand{min-width:0}.brand-mark{width:42px;height:42px}.brand-copy strong{font-size:12px}
+      .hero{min-height:620px}.hero-content{padding:85px 0}
+      h1{letter-spacing:-2px}.hero p{font-size:16px}
+      .section{padding:70px 0}
+      .three-grid,.program-grid,.social-grid,.contact-grid{grid-template-columns:1fr}
+      .highlight{grid-template-columns:1fr;gap:7px}
+      .event-card{grid-template-columns:90px 1fr;gap:15px;padding:16px}
+      .event-date{padding:15px 8px}.event-date strong{font-size:27px}
+      .event-info h3{font-size:17px}
+      .community-box{grid-template-columns:1fr;padding:28px}
+      .community-box h2{font-size:28px}
+      .about-visual{min-height:330px}
+      .footer-main{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Jashore University of Science and Technology · Bangladesh</span>
+      <span><a href="mailto:acsjust@gmail.com">acsjust@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/ACS.Student.Chapter.JUST" target="_blank" rel="noopener">Facebook ↗</a></span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="ACS Student Chapter JUST home">
+        <span class="brand-mark">ACS</span>
+        <span class="brand-copy"><strong>ACS STUDENT CHAPTER</strong><span>Jashore University of Science & Technology</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#focus">What We Do</a><a href="#programs">Programs</a>
+        <a href="#news">News</a><a href="#community">Join Us</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#community">Become a Member ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">ACS International Student Chapter · JUST</div>
+          <h1>Connecting minds.<br><span>Advancing chemistry.</span></h1>
+          <p>A student-led scientific community at Jashore University of Science and Technology, bringing students together through research, learning, professional development and meaningful scientific outreach.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#about">Discover Our Chapter ↗</a>
+            <a class="btn btn-outline" href="https://www.facebook.com/ACS.Student.Chapter.JUST" target="_blank" rel="noopener">Follow on Facebook</a>
+          </div>
+          <div class="hero-note"><i></i><span>Curiosity · Collaboration · Chemistry for a better future</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="kicker">Who We Are</div>
+          <h2>A community where chemistry brings us together.</h2>
+          <p class="lead">The American Chemical Society (ACS) Student Chapter at Jashore University of Science and Technology (JUST) is a student-led community for people passionate about chemistry and the chemical sciences.</p>
+          <p>As an ACS International Student Chapter, we aim to connect our campus with the wider global chemistry community. Through scientific events, collaborative learning, research conversations, career-focused activities and outreach, we encourage students to explore chemistry beyond the classroom.</p>
+          <p>We believe that chemistry can help us understand the world, develop innovative solutions and contribute to a more sustainable future.</p>
+          <div class="pill-row"><span class="pill">Scientific Learning</span><span class="pill">Research Culture</span><span class="pill">Professional Growth</span><span class="pill">Community Outreach</span></div>
+        </div>
+        <div class="about-visual" role="img" aria-label="Students collaborating in a science learning environment">
+          <div class="about-visual-card"><strong>Think. Explore. Collaborate.</strong><span>Building a stronger culture of chemistry, together.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Our Purpose</div>
+          <h2>More than a student organization.</h2>
+          <p class="lead">We create opportunities for students to learn from one another, engage with the scientific community and prepare for the next stage of their journey.</p>
+        </div>
+        <div class="three-grid">
+          <article class="feature"><div class="feature-icon">⚗</div><h3>Promote Chemistry</h3><p>Make chemistry engaging and accessible through scientific discussions, demonstrations, learning sessions and outreach activities.</p></article>
+          <article class="feature"><div class="feature-icon">⌕</div><h3>Encourage Research</h3><p>Inspire curiosity, research awareness, scientific integrity and communication of research ideas.</p></article>
+          <article class="feature"><div class="feature-icon">↗</div><h3>Develop Careers</h3><p>Help students explore academic and industrial pathways while strengthening communication, teamwork and leadership.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="programs">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Our Activities</div>
+          <h2>Learn beyond the classroom.</h2>
+          <p class="lead">Our program areas are designed to connect scientific knowledge with practical skills and real-world impact.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program"><small>01 · Scientific Development</small><h3>Seminars & Research Talks</h3><p>Exchange ideas with academics, researchers and fellow students on emerging scientific topics and research practices.</p></article>
+          <article class="program"><small>02 · Practical Learning</small><h3>Workshops & Skill Building</h3><p>Explore laboratory safety, scientific writing, research communication, presentation skills and professional development.</p></article>
+          <article class="program"><small>03 · Career Exploration</small><h3>Industry & Career Engagement</h3><p>Discover how chemistry connects with industry, manufacturing, quality control, research and development.</p></article>
+          <article class="program"><small>04 · Public Engagement</small><h3>Science Outreach</h3><p>Share the excitement of chemistry with wider communities and encourage scientific curiosity beyond campus.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="news">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Chapter Highlights</div>
+          <h2>Science, ideas and shared progress.</h2>
+          <p class="lead">A selection of chapter-related milestones and activities. Follow our Facebook page for announcements and event updates.</p>
+        </div>
+        <div class="highlight">
+          <div class="highlight-date">04 JUL 2026</div>
+          <div><h3>Innovative Research for a Sustainable Future & Mastering Scientific Writing</h3><p>A seminar organized by ACS Student Chapter JUST, focusing on research impact, ethics, sustainability and effective scientific communication.</p></div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-date">2025</div>
+          <div><h3>ACS International Student Chapter at JUST</h3><p>JUST is listed among the institutions hosting ACS International Student Chapters in Bangladesh. The ACS Bangladesh Chapter lists JUST's chapter since 2025.</p></div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-date">ONGOING</div>
+          <div><h3>Elevate ACS: Industry Immersion & Professional Workshop</h3><p>A professional development initiative developed around industry exposure, career insight, practical skills and inclusion. Check the chapter's official channels for program announcements.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white">
+      <div class="container initiative">
+        <div>
+          <div class="kicker">Professional Development</div>
+          <h2>Bridging academic chemistry with the world of work.</h2>
+          <p class="lead">Chemistry opens doors to research, industry, entrepreneurship, education and public service. We want students to see those possibilities and prepare for them.</p>
+          <p style="color:var(--muted)">Through career conversations, industry engagement and practical workshops, chapter activities can help students connect their academic learning with professional opportunities.</p>
+        </div>
+        <div class="initiative-panel">
+          <span class="tag">PROGRAM CONCEPT</span>
+          <h3>Elevate ACS</h3>
+          <p>Industry Immersion & Professional Workshop — a two-part concept designed to connect academic learning with real-world chemical science careers.</p>
+          <ul class="checklist">
+            <li>Industry exposure and facility learning</li>
+            <li>Professional communication and networking</li>
+            <li>Career pathway exploration</li>
+            <li>Inclusive professional development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="latest-event">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Featured Event</div>
+          <h2>Recent chapter activity.</h2>
+        </div>
+        <article class="event-card">
+          <div class="event-date"><strong>04</strong><span>July 2026</span></div>
+          <div class="event-info">
+            <small>Seminar · Research & Scientific Communication</small>
+            <h3>Innovative Research for a Sustainable Future and Mastering Scientific Writing</h3>
+            <p>ACS Student Chapter JUST hosted a seminar highlighting research impact, ethics, sustainability and the importance of effective scholarly communication.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section white" id="community">
+      <div class="container">
+        <div class="community-box">
+          <div><h2>Find your place in chemistry.</h2><p>Connect with fellow students, take part in scientific activities and explore opportunities to grow as a learner, researcher and future professional.</p></div>
+          <a class="btn btn-light" href="https://www.facebook.com/ACS.Student.Chapter.JUST" target="_blank" rel="noopener">Connect With Us ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="facebook">
+      <div class="container social-grid">
+        <div class="social-copy">
+          <div class="kicker">Stay Connected</div>
+          <h2>Follow our chapter story.</h2>
+          <p class="lead">Discover announcements, event photographs, member activities and the latest updates from ACS Student Chapter JUST.</p>
+          <p>For the most up-to-date information, visit our official Facebook page.</p>
+          <a class="btn" href="https://www.facebook.com/ACS.Student.Chapter.JUST" target="_blank" rel="noopener">Visit Facebook Page ↗</a>
+        </div>
+        <div class="fb-frame">
+          <iframe title="ACS Student Chapter JUST Facebook timeline" loading="lazy" height="620" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FACS.Student.Chapter.JUST&tabs=timeline&width=500&height=620&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Get in Touch</div>
+          <h2>Let's build a stronger chemistry community.</h2>
+          <p class="lead">Have a question, collaboration idea or want to know more about chapter activities? Reach out to us.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card"><h3>ACS Student Chapter, JUST</h3><p>Department of Chemistry</p><p>Jashore University of Science and Technology</p><p>Jashore, Bangladesh</p></div>
+          <div class="contact-card"><h3>Contact & Social</h3><p>Email: <a href="mailto:acsjust@gmail.com">acsjust@gmail.com</a></p><p>Facebook: <a href="https://www.facebook.com/ACS.Student.Chapter.JUST" target="_blank" rel="noopener">ACS Student Chapter JUST ↗</a></p><p>Official university website: <a href="https://just.edu.bd/" target="_blank" rel="noopener">just.edu.bd ↗</a></p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand"><strong>ACS Student Chapter, JUST</strong><p>Connecting students through chemistry, research, professional development and community engagement.</p></div>
+        <div class="footer-links"><a href="#about">About</a><a href="#programs">Programs</a><a href="#news">Highlights</a><a href="#facebook">Facebook</a><a href="#contact">Contact</a></div>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> ACS Student Chapter, JUST. All rights reserved.</span><span>Built for curiosity. Driven by chemistry.</span></div>
+    </div>
+  </footer>
+  <a class="backtop" id="backtop" href="#home" aria-label="Back to top">↑</a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const backtop = document.getElementById('backtop');
+    window.addEventListener('scroll', () => backtop.classList.toggle('show', window.scrollY > 500));
+  </script>
+</body>
+</html>
